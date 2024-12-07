@@ -1,0 +1,10 @@
+.navbar {
+    background-color: rgb(26, 26, 41)!important;
+}
+.nav-hover:hover {
+    color: #0d6efd !important;
+    /* Primary color on hover */
+    text-decoration: underline;
+    /* Optional hover effect */
+}
+ 
