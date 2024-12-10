@@ -1,5 +1,8 @@
 import Carousel from "react-bootstrap/Carousel";
-// import myImage from '../';
+import myImage1 from '/src/images/children1.jpg';
+import myImage2 from '/src/images/children2.jpg';
+import myImage3 from '/src/images/children3.jpg';
+
 
 function Slider() {
   return (
@@ -7,8 +10,10 @@ function Slider() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://via.placeholder.com/800x400?text=First+Slide" // Replace with your first image URL
+          src={myImage1} // Replace with your first image URL
           alt="First slide"
+          height="600px"
+
         />
         <Carousel.Caption>
           <h3>First slide label</h3>
@@ -19,8 +24,10 @@ function Slider() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://via.placeholder.com/800x400?text=Second+Slide" // Replace with your second image URL
+          src={myImage2} // Replace with your second image URL
           alt="Second slide"
+          height="600px"
+
         />
         <Carousel.Caption>
           <h3 className="text-danger">Second slide label</h3>
@@ -31,8 +38,9 @@ function Slider() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://via.placeholder.com/800x400?text=Third+Slide" // Replace with your third image URL
+          src={myImage3} // Replace with your third image URL
           alt="Third slide"
+          height="600px"
         />
         <Carousel.Caption>
           <h3>Third slide label</h3>
