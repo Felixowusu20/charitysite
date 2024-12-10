@@ -1,4 +1,5 @@
 import Carousel from "react-bootstrap/Carousel";
+// import myImage from '../';
 
 function Slider() {
   return (
