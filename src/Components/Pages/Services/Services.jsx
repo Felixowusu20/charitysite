@@ -3,14 +3,12 @@ import "./Services.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
-// Import images for the icons
+// we will replace with the appropirate images
 import educationalIcon from "../../../images/site logo/brand-logo1.png";
 import startupIcon from "../../../images/site logo/brand-logo1.png";
 import youthEmpowermentIcon from "../../../images/site logo/brand-logo1.png";
 import workshopIcon from "../../../images/site logo/brand-logo1.png";
 import healthSchemeIcon from "../../../images/site logo/brand-logo1.png";
-
-// Import arrow icons
 import leftArrow from "../../../images/site logo/brand-logo1.png";
 import rightArrow from "../../../images/site logo/brand-logo1.png";
 
@@ -101,8 +99,8 @@ const Services = () => {
                     <Card.Title className="fw-bold">
                       {service.service}
                     </Card.Title>
-                    <Card.Text>{service.description}</Card.Text>
-                    <Button variant="primary">Learn More</Button>
+                    <Card.Text className= "s-dectiption">{service.description}</Card.Text>
+                    {/* <Button variant="primary">Learn More</Button> */}
                   </Card.Body>
                 </Card>
               </a>

@@ -2,9 +2,12 @@
     background-color: rgb(26, 26, 41);
 }
 .nav-hover:hover {
-    color: #0d6efd !important;
+    color: #ce3b0f !important;
     /* Primary color on hover */
-    text-decoration: underline;
+    text-decoration: None;
     /* Optional hover effect */
 }
- 
+.nav-link{
+    font-size: large;
+    font-weight: bold;
+ }

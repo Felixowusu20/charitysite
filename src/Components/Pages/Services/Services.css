@@ -7,10 +7,13 @@
 }
 
 h3.text-primary {
-    color: #007bff;
+    color: #c8d6e6;
     /* Primary blue color */
 }
+.s-dectiption{
+    text-decoration: None;
 
+}
 .slider-wrapper {
     position: relative;
     display: flex;
@@ -64,6 +67,8 @@ h3.text-primary {
 .service-icon {
     height: 60px;
     width: 60px;
+    border-radius: 90;
+    border-width: 1 , black;
 }
 
 /* Arrow styles */
