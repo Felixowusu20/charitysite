@@ -4,13 +4,14 @@ import myImage2 from '/src/images/children2.jpg';
 import myImage3 from '/src/images/children3.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap"
+import './slider.css'
 
 function Slider() {
   return (
     <Carousel>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block w-100 blurred-image"
           src={myImage1} // Replace with your first image URL
           alt="First slide"
           height="600px"
@@ -24,7 +25,7 @@ function Slider() {
 
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block w-100 blurred-image"
           src={myImage2} // Replace with your second image URL
           alt="Second slide"
           height="600px"
@@ -38,7 +39,7 @@ function Slider() {
 
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block w-100 blurred-image"
           src={myImage3} // Replace with your third image URL
           alt="Third slide"
           height="600px"
