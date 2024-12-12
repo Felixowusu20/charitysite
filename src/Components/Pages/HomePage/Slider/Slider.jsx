@@ -2,7 +2,8 @@ import Carousel from "react-bootstrap/Carousel";
 import myImage1 from '/src/images/children1.jpg';
 import myImage2 from '/src/images/children2.jpg';
 import myImage3 from '/src/images/children3.jpg';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/js/bootstrap"
 
 function Slider() {
   return (
@@ -16,8 +17,8 @@ function Slider() {
 
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3 className="text-danger text-uppercase fs-1">Compassion in Action</h3>
+          <p className="fs-3">Together, We Can Make a Difference</p>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -30,8 +31,8 @@ function Slider() {
 
         />
         <Carousel.Caption>
-          <h3 className="text-danger">Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3 className="text-danger text-uppercase fs-1">Lifting Lives, Inspiring Change</h3>
+          <p className="fs-3">Giving hope to the less privileged and making a change for a better tomorrow</p>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -43,9 +44,9 @@ function Slider() {
           height="600px"
         />
         <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          <h3 className="text-uppercase text-danger fs-1">Because Every Life Matters</h3>
+          <p className="fs-3">
+            Join hands and spread kindness. Small acts, big impacts.
           </p>
         </Carousel.Caption>
       </Carousel.Item>
