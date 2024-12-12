@@ -3,6 +3,10 @@ import "./Services.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
+//added some icons here. Please check through and select the appropriate ones if necessary
+import { Mdmoney, MdSchool, MdGroup, MdLightbulb } from "react-icons/md";
+
+
 // we will replace with the appropirate images
 import educationalIcon from "../../../images/site logo/brand-logo1.png";
 import startupIcon from "../../../images/site logo/brand-logo1.png";
