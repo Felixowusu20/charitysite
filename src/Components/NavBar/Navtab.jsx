@@ -13,7 +13,7 @@ const Navtab = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
+      if (window.scrollY > 2) {
         setNavbarStyle({
           backgroundColor: "rgb(26,26,41)",
           linkColor: "white",
@@ -52,7 +52,7 @@ const Navtab = () => {
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
+            <Nav className="ms-auto nav-link">
               <Nav.Link
                 href="#home"
                 className="mx-2 fw-semibold nav-hover"
@@ -91,7 +91,7 @@ const Navtab = () => {
               <Nav.Link
                 href="#donate"
                 className="mx-2 fw-semibold btn btn-primary textColor px-3 py-1 rounded-pill"
-                style={{ cursor: "pointer" }}
+                style={{ cursor: "pointer", color: navbarStyle.linkColor }}
               >
                 Make a Donation
               </Nav.Link>

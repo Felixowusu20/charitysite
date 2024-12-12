@@ -31,7 +31,7 @@ const AboutUs = () => {
                 screening, mentorship program to school children, donations, and
                 general counseling.
               </p>
-              <Button variant="primary" className="mt-2">
+              <Button variant="primary " className="mt-2 btn">
                 Read More
               </Button>
             </div>
