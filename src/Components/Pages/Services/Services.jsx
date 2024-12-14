@@ -1,18 +1,14 @@
 import React, { useRef } from "react";
 import "./Services.css";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import {
+  MdAttachMoney,
+  MdCastForEducation,
+  MdOutlineGroups2,
+  MdWorkspacesFilled,
+  MdOutlineHealthAndSafety,
+} from "react-icons/md";
 
-//added some icons here. Please check through and select the appropriate ones if necessary
-import { Mdmoney, MdSchool, MdGroup, MdLightbulb } from "react-icons/md";
-
-
-// we will replace with the appropirate images
-import educationalIcon from "../../../images/site logo/brand-logo1.png";
-import startupIcon from "../../../images/site logo/brand-logo1.png";
-import youthEmpowermentIcon from "../../../images/site logo/brand-logo1.png";
-import workshopIcon from "../../../images/site logo/brand-logo1.png";
-import healthSchemeIcon from "../../../images/site logo/brand-logo1.png";
 import leftArrow from "../../../images/site logo/brand-logo1.png";
 import rightArrow from "../../../images/site logo/brand-logo1.png";
 
@@ -20,7 +16,9 @@ const Services = () => {
   const services = [
     {
       id: 1,
-      imgIcon: educationalIcon,
+      imgIcon: (
+        <MdCastForEducation style={{ fontSize: "2.5rem", color: "#007bff" }} />
+      ),
       service: "Educational Scheme",
       description:
         "The Organization provides food, clothing, and shelter to these communities as an immediate solution to alleviate poverty.",
@@ -28,7 +26,9 @@ const Services = () => {
     },
     {
       id: 2,
-      imgIcon: startupIcon,
+      imgIcon: (
+        <MdAttachMoney style={{ fontSize: "2.5rem", color: "#28a745" }} />
+      ),
       service: "Start-Up Capital",
       description:
         "We assist with start-up capital to help individuals in impoverished communities build sustainable livelihoods.",
@@ -36,7 +36,9 @@ const Services = () => {
     },
     {
       id: 3,
-      imgIcon: youthEmpowermentIcon,
+      imgIcon: (
+        <MdOutlineGroups2 style={{ fontSize: "2.5rem", color: "#ffc107" }} />
+      ),
       service: "Youth Empowerment",
       description:
         "Empowering youth with resources, training, and mentorship to unlock their potential.",
@@ -44,7 +46,9 @@ const Services = () => {
     },
     {
       id: 4,
-      imgIcon: workshopIcon,
+      imgIcon: (
+        <MdWorkspacesFilled style={{ fontSize: "2.5rem", color: "#17a2b8" }} />
+      ),
       service: "Workshops",
       description:
         "Hosting workshops to provide education and resources for personal and community growth.",
@@ -52,7 +56,11 @@ const Services = () => {
     },
     {
       id: 5,
-      imgIcon: healthSchemeIcon,
+      imgIcon: (
+        <MdOutlineHealthAndSafety
+          style={{ fontSize: "2.5rem", color: "#dc3545" }}
+        />
+      ),
       service: "Health Scheme",
       description:
         "Providing access to healthcare and health education to promote well-being in underserved communities.",
@@ -92,19 +100,16 @@ const Services = () => {
             <div key={service.id} className="service-card-wrapper">
               <a href={service.link} className="service-card-link">
                 <Card className="service-card shadow-sm">
-                  <div className="card-header">
-                    <img
-                      src={service.imgIcon}
-                      alt={`${service.service} Icon`}
-                      className="service-icon"
-                    />
+                  <div className="card-header text-center">
+                    {service.imgIcon}
                   </div>
                   <Card.Body>
                     <Card.Title className="fw-bold">
                       {service.service}
                     </Card.Title>
-                    <Card.Text className= "s-dectiption">{service.description}</Card.Text>
-                    {/* <Button variant="primary">Learn More</Button> */}
+                    <Card.Text className="s-description">
+                      {service.description}
+                    </Card.Text>
                   </Card.Body>
                 </Card>
               </a>

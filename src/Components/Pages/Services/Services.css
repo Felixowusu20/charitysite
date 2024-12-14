@@ -1,106 +1,101 @@
-/* General Styles */
 .services-container {
-    padding: 2rem;
-    text-align: center;
-    background-color: #f4f4f9;
-    /* Soft neutral background */
+    padding: 20px;
 }
 
-h3.text-primary {
-    color: #c8d6e6;
-    /* Primary blue color */
-}
-.s-dectiption{
-    text-decoration: None;
-
-}
-.slider-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    margin-top: 2rem;
-}
-
-/* Slider styles */
 .services-slider {
     display: flex;
+    gap: 20px;
     overflow-x: auto;
-    gap: 1.5rem;
-    width: 100%;
+    /* Enable horizontal scrolling */
+    scroll-behavior: smooth;
+    padding: 10px 0;
+}
+
+.services-slider::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+}
+
+.services-slider {
     scrollbar-width: none;
     /* Hide scrollbar for Firefox */
 }
 
 .services-slider::-webkit-scrollbar {
     display: none;
-    /* Hide scrollbar for Chrome, Safari, Edge */
+    /* Hide scrollbar for cleaner look */
 }
 
-/* Card styles */
 .service-card-wrapper {
-    flex: 0 0 300px;
+    flex: 0 0 270px;
+    /* Fixed width for cards to enable sliding */
+    text-decoration: none;
 }
 
 .service-card {
-    border: none;
+    height: 300px;
+    /* Reduced card height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border-radius: 10px;
     overflow: hidden;
-    background-color: #fff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    /* Hover effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .card-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100px;
+    padding: 20px 0;
     background-color: #f8f9fa;
 }
 
-.service-icon {
-    height: 60px;
-    width: 60px;
-    border-radius: 90;
-    border-width: 1 , black;
+.s-description {
+    color: #6c757d;
+    font-size: 0.9rem;
+    text-decoration: none;
 }
 
-/* Arrow styles */
 .arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
     cursor: pointer;
-    z-index: 10;
+    width: 30px;
+    height: 30px;
 }
 
 .arrow-left {
-    left: -50px;
+    position: absolute;
+    left: -40px;
 }
 
 .arrow-right {
-    right: -50px;
+    position: absolute;
+    right: -40px;
 }
 
-.arrow:hover {
-    transform: translateY(-50%) scale(1.1);
+.service-card-link {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-    .arrow {
-        display: none;
+    .services-slider {
+        gap: 10px;
+        /* Reduce spacing for smaller screens */
     }
 
-    .services-slider {
-        padding: 0 10px;
+    .service-card-wrapper {
+        flex: 0 0 80%;
+        /* Make cards larger for mobile view */
+    }
+
+    .arrow {
+        width: 25px;
+        height: 25px;
     }
 }
