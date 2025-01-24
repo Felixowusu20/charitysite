@@ -10,7 +10,7 @@ import assfinsec from "../images/executives/assistant_fin_sec.jfif";
 import "./Members.css";
 
 const Members = () => {
-  const images = [
+  const teamMembers = [
     {
       src: president,
       alt: "President",
@@ -61,12 +61,14 @@ const Members = () => {
   };
 
   return (
-    <>
+    <section aria-labelledby="team-title">
       <div>
-        <h1 style={{ textAlign: "center" }}>Meet Our Team</h1>
+        <h1 id="team-title" style={{ textAlign: "center", margin: "1rem 0" }}>
+          Meet Our Team
+        </h1>
       </div>
       <div className="grid-container">
-        {images.map((image, index) => (
+        {teamMembers.map((member, index) => (
           <motion.div
             key={index}
             className="grid-item"
@@ -75,16 +77,24 @@ const Members = () => {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
             variants={animationVariants}
+            aria-label={`${member.position}: ${member.name}`}
           >
-            <img src={image.src} alt={image.alt} className="image" />
+            <img
+              src={member.src}
+              alt={member.alt}
+              className="image"
+              onError={(e) =>
+                (e.target.src = "/images/default-placeholder.png")
+              }
+            />
             <div className="overlay">
-              <h2>{image.position}</h2>
-              <p>{image.name}</p>
+              <h2>{member.position}</h2>
+              <p>{member.name}</p>
             </div>
           </motion.div>
         ))}
       </div>
-    </>
+    </section>
   );
 };
 

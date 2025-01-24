@@ -89,12 +89,13 @@ const Services = () => {
       <h3 className="text-primary">Services</h3>
       <h2 className="fw-bold mb-3">Give a Future Full Of Choices</h2>
       <div className="slider-wrapper">
-        <img
+        {/* <img
           className="arrow arrow-left"
           src={leftArrow}
           alt="Previous"
           onClick={slideLeft}
-        />
+          aria-label="Scroll left"
+        /> */}
         <div className="services-slider" ref={sliderRef}>
           {services.map((service) => (
             <div key={service.id} className="service-card-wrapper">
@@ -116,12 +117,13 @@ const Services = () => {
             </div>
           ))}
         </div>
-        <img
+        {/* <img
           className="arrow arrow-right"
           src={rightArrow}
           alt="Next"
           onClick={slideRight}
-        />
+          aria-label="Scroll right"
+        /> */}
       </div>
     </div>
   );
