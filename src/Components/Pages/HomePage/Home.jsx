@@ -4,15 +4,16 @@ import  Slider from "../HomePage/Slider/Slider"
 import AboutUs from '../About Us/AboutUs'
 import Services from '../Services/Services'
 import Members from '../../Members'
-import Mission from '../../Mission'
+import Banner from "../HomePage/Banner/Banner"
 const Home = () => {
   return (
-    <div>
+    <div >
         <Slider/>
         {/* <Mission/> */}
         <AboutUs />
         <Services/>
         <Members/>
+        <Banner/>
     </div>
   )
 }

@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap"
 import Navtab from './Components/NavBar/Navtab';
 import Home from './Components/Pages/HomePage/Home';
+import Footer from "./Components/Footer/Footer"
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
       <Navtab />
       <div className='mt-50 '>
         <Home />
+        <Footer />
       </div>
     </>
   );
