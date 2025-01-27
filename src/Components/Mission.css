@@ -1,0 +1,11 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.donate-image{
+    height: 300px;
+    width: 200px;
+}
