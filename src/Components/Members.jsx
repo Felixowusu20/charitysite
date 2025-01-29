@@ -88,7 +88,7 @@ const Members = () => {
               }
             />
             <div className="overlay">
-              <h2>{member.position}</h2>
+              <h2 style={{color:'orange'}}>{member.position}</h2>
               <p>{member.name}</p>
             </div>
           </motion.div>

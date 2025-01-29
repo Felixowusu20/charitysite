@@ -72,12 +72,15 @@
 @media screen and (max-width: 767px) {
   .grid-item {
     flex: 0 0 calc(50% - 20px);
-    /* Each item takes 50% of the container on smaller screens */
+  
     max-width: calc(50% - 20px);
   }
 
   .grid-container {
     gap: 15px;
-    /* Reduce gap for smaller screens */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

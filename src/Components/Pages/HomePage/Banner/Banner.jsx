@@ -13,7 +13,7 @@ const Banner = () => {
       easing: "ease-in-out",
       delay: 100,
       duration: 800,
-      once: true,
+      once: false,
     });
   }, []);
 
