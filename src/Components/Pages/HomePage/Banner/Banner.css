@@ -88,12 +88,12 @@
     }
 
     .banner-container{
-        background-image: url("../images/Banner/background.jpg");
+        background-image: url("/src/images/Banner/background.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         width: 100%;
         height: 100%;
-        position: relative;
-        background-position: center;
+        /* position: relative; */
+        /* background-position:center; */
     }
 }

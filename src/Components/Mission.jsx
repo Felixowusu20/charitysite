@@ -1,5 +1,5 @@
 import React from "react";
-import donate from "../images/children5.jpg"
+import donate from "../images/children4.jpg"
 import './Mission.css'
 
 
@@ -12,7 +12,7 @@ const Mission = () => {
                 <img src={donate} alt="image"/>
             </div>
             <div className="mission-statement">
-                <p>About us</p>
+                <p style={{fontSize:'20px'}}>About us</p>
                 <h2>Our Mission</h2>
                 <p>Our mission is to help the needy and vulnerable in society by assisting and providing them with
                     food, shelter, clothing and other essentials. Also, we provide scloarship to brilliant but 

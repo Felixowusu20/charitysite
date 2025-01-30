@@ -5,11 +5,13 @@ import AboutUs from '../About Us/AboutUs'
 import Services from '../Services/Services'
 import Members from '../../Members'
 import Banner from "../HomePage/Banner/Banner"
+import Mission from '../../Mission'
+
 const Home = () => {
   return (
     <div >
         <Slider/>
-        {/* <Mission/> */}
+        <Mission/>
         <AboutUs />
         <Services/>
         <Members/>
