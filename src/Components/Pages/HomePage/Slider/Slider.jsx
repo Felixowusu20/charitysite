@@ -1,6 +1,6 @@
 import Carousel from "react-bootstrap/Carousel";
 import myImage1 from '/src/images/children1.jpg';
-import myImage2 from '/src/images/children2.jpg';
+import myImage4 from '/src/images/children4.jpg';
 import myImage3 from '/src/images/children3.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap"
@@ -26,7 +26,7 @@ function Slider() {
       <Carousel.Item>
         <img
           className="d-block w-100 blurred-image"
-          src={myImage2} // Replace with your second image URL
+          src={myImage4} // Replace with your second image URL
           alt="Second slide"
           height="600px"
 

@@ -31,3 +31,23 @@ img{
     margin-left: -100px;
     /* border: 1px solid blue; */
 }
+
+@media (max-width: 768px){
+    .main{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .donate-image{
+        width: 100%;
+        height: auto;
+    }
+
+    .mission-statement{
+        width: 100%;
+        height: fit-content;
+        margin-left: 0;
+        padding: 5%;
+        margin-top: 7%;
+    }
+}

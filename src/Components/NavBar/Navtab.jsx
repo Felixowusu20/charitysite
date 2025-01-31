@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import "./Navtab.css";
 import logo from "../../images/site logo/brand-logo1.png";
 
@@ -41,7 +42,7 @@ const Navtab = () => {
         }}
       >
         <Container>
-          <Navbar.Brand href="#home" className="fw-bold fs-4 text-primary">
+          <Navbar.Brand as={Link} to="/" className="fw-bold fs-4 text-primary">
             <img
               src={logo}
               alt="Site Logo"
@@ -54,42 +55,48 @@ const Navtab = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto nav-link">
               <Nav.Link
-                href="#home"
+                as={Link}
+                to="/"
                 className="mx-2 fw-semibold nav-hover"
                 style={{ color: navbarStyle.linkColor }}
               >
                 Home
               </Nav.Link>
               <Nav.Link
-                href="#about-us"
+                as={Link}
+                to="/About"
                 className="mx-2 fw-semibold nav-hover"
                 style={{ color: navbarStyle.linkColor }}
               >
                 About Us
               </Nav.Link>
               <Nav.Link
-                href="#services"
+                as={Link}
+                to="/services"
                 className="mx-2 fw-semibold nav-hover"
                 style={{ color: navbarStyle.linkColor }}
               >
                 Services
               </Nav.Link>
               <Nav.Link
-                href="#news"
+                as={Link}
+                to="/news"
                 className="mx-2 fw-semibold nav-hover"
                 style={{ color: navbarStyle.linkColor }}
               >
                 News
               </Nav.Link>
               <Nav.Link
-                href="#contact"
+                as={Link}
+                to="/contact"
                 className="mx-2 fw-semibold nav-hover"
                 style={{ color: navbarStyle.linkColor }}
               >
                 Contact
               </Nav.Link>
               <Nav.Link
-                href="#donate"
+                as={Link}
+                to="/donate"
                 className="mx-2 fw-semibold btn btn-primary textColor px-3 py-1 rounded-pill"
                 style={{ cursor: "pointer", color: navbarStyle.linkColor }}
               >

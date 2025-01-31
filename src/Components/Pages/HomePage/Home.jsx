@@ -6,6 +6,8 @@ import Services from '../Services/Services'
 import Members from '../../Members'
 import Banner from "../HomePage/Banner/Banner"
 import Mission from '../../Mission'
+// import About from '../About/About.jsx'
+import AutoScrollCarousel from '../About/AutoScrollCarousel'
 
 const Home = () => {
   return (
@@ -16,6 +18,8 @@ const Home = () => {
         <Services/>
         <Members/>
         <Banner/>
+        {/* <About/> */}
+        {/* <AutoScrollCarousel/> */}
     </div>
   )
 }
