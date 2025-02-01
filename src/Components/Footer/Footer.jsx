@@ -44,7 +44,7 @@ const Footer = () => {
           {/* Contact & Socials Section */}
           <Col md={4} className="footer-contact">
             <h4 className="footer-heading">Contact Us</h4>
-            <p>Email: info@reachoutafrica.org</p>
+            <p>Email: info@adeipurityfoundation.org</p>
             <p>Phone: +233 123 456 789</p>
             <div className="footer-socials">
               <a href="https://facebook.com" target="_blank" rel="noreferrer">

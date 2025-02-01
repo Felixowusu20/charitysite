@@ -16,7 +16,8 @@
 // index.js
 import App from "./App";
 import Home from "./Components/Pages/HomePage/Home";
-import About from "../src/Components/Pages/About/About"
+import Donate from "./Components/Pages/Donate/Donate"
+import About from "./Components/Pages/About/About";
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import {
@@ -24,7 +25,6 @@ import {
   RouterProvider,
   // Route
 } from "react-router-dom";
-
 
 const router = createBrowserRouter([
   {
@@ -38,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "home",
     element: <Home/>,
+  },
+  {
+    path: "Donate",
+    element: <Donate/>,
   }
 ]);
 

@@ -7,7 +7,7 @@ import Members from '../../Members'
 import Banner from "../HomePage/Banner/Banner"
 import Mission from '../../Mission'
 // import About from '../About/About.jsx'
-import AutoScrollCarousel from '../About/AutoScrollCarousel'
+import AutoScrollCarousel from '../Donate/AutoScrollCarousel'
 
 const Home = () => {
   return (

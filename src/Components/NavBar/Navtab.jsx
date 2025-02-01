@@ -78,14 +78,7 @@ const Navtab = () => {
               >
                 Services
               </Nav.Link>
-              <Nav.Link
-                as={Link}
-                to="/news"
-                className="mx-2 fw-semibold nav-hover"
-                style={{ color: navbarStyle.linkColor }}
-              >
-                News
-              </Nav.Link>
+              
               <Nav.Link
                 as={Link}
                 to="/contact"
@@ -96,8 +89,8 @@ const Navtab = () => {
               </Nav.Link>
               <Nav.Link
                 as={Link}
-                to="/donate"
-                className="mx-2 fw-semibold btn btn-primary textColor px-3 py-1 rounded-pill"
+                to="/Donate"
+                className="mx-2 fw-semibold btn btn-primary textColor px-3 rounded-pill"
                 style={{ cursor: "pointer", color: navbarStyle.linkColor }}
               >
                 Make a Donation

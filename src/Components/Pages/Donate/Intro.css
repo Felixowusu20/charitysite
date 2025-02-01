@@ -1,21 +1,19 @@
-/* About.css */
 /* Hero Section Container */
-.about-hero-container {
+.hero-container {
     position: relative;
     width: 100%;
     height: 400px; /* Adjust height as needed */
-    background-image: url("/src/images/give.jpg"); /* Add your image path */
+    background-image: url("/src/images/donate.jpg"); /* Add your image path */
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    margin-bottom: 30px;
   }
   
   /* Overlay with Linear Gradient */
-  .about-hero-container::before {
+  .hero-container::before {
     content: "";
     position: absolute;
     top: 0;
@@ -30,7 +28,7 @@
   }
   
   /* Hero Content */
-  .about-hero-content {
+  .hero-content {
     position: relative;
     z-index: 2;
     text-align: center;
@@ -38,33 +36,13 @@
   }
   
   /* First Sentence */
-  .about-hero-content .about-top-text {
+  .hero-content .top-text {
     font-size: 3.5rem;
     margin-bottom: 20px;
   }
   
   /* Second Sentence */
-  .about-hero-content .about-bottom-text {
+  .hero-content .bottom-text {
     font-size: 2.5rem;
     margin: 0 auto; /* Center the text */
-  }
-  
-  .about-who-we-are {
-    padding: 10%;
-    font-size: larger;
-    margin-bottom: 30px;
-  }
-  
-  .about-who-we-are h1 {
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 5%;
-  }
-  
-  .about-history {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    padding: 2% 10% 10% 10%;
-    font-size: larger;
   }

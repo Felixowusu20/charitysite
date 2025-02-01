@@ -22,10 +22,9 @@ const AboutUs = () => {
             <div>
               <h4 className="fw-semibold mb-3">Help for the Children</h4>
               <p className="text-muted">
-                REACH OUT AFRICA is a non-profit organization made up of
-                students, lawyers, pharmacists, doctors, nurses, and other
-                professionals who are like-minded in bringing relief to
-                dispirited communities in Africa. This, we do through our
+                ADEI PURITY FOUNDATION is a non-profit organization made up of
+                a group of hardworking and compassionate individuals who are like-minded in bringing relief to
+                dispirited communities in Ghana. This, we do through our
                 outreach programs. Activities of our outreach programs include:
                 health promotion through health education and free health
                 screening, mentorship program to school children, donations, and
