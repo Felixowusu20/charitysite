@@ -8,6 +8,7 @@ import Banner from "../HomePage/Banner/Banner"
 import Mission from '../../Mission'
 // import About from '../About/About.jsx'
 import AutoScrollCarousel from '../Donate/AutoScrollCarousel'
+import Contact from "./Contact/Contact"
 
 const Home = () => {
   return (
@@ -18,8 +19,7 @@ const Home = () => {
         <Services/>
         <Members/>
         <Banner/>
-        {/* <About/> */}
-        {/* <AutoScrollCarousel/> */}
+        <Contact />
     </div>
   )
 }
