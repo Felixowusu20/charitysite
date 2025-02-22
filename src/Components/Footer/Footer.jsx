@@ -2,11 +2,12 @@ import React from "react";
 import "./Footer.css";
 import {
   FaFacebookF,
-  FaTwitter,
+  FaTiktok,
   FaInstagram,
   FaLinkedin,
 } from "react-icons/fa";
 import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -27,10 +28,10 @@ const Footer = () => {
             <h4 className="footer-heading">Quick Links</h4>
             <ul>
               <li>
-                <a href="#home">Home</a>
+              <Link to="/home">Home</Link>
               </li>
               <li>
-                <a href="#about">About Us</a>
+              <Link to="/about">About Us</Link>
               </li>
               <li>
                 <a href="#services">Services</a>
@@ -44,21 +45,21 @@ const Footer = () => {
           {/* Contact & Socials Section */}
           <Col md={4} className="footer-contact">
             <h4 className="footer-heading">Contact Us</h4>
-            <p>Email: info@adeipurityfoundation.org</p>
+            <p>Email: adeipurityfoundation@gmail.com</p>
             <p>Phone: +233 123 456 789</p>
             <div className="footer-socials">
               <a href="https://facebook.com" target="_blank" rel="noreferrer">
                 <FaFacebookF />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer">
-                <FaTwitter />
+              <a href="https://www.tiktok.com/@adeipurityfoundation" target="_blank" rel="noreferrer">
+                <FaTiktok/>
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer">
+              <a href="https://www.instagram.com/adeipurityfoundation/" target="_blank" rel="noreferrer">
                 <FaInstagram />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-                <FaLinkedin />
-              </a>
+              {/* <a href="https://linkedin.com" target="_blank" rel="noreferrer"> */}
+                {/* <FaLinkedin /> */}
+              {/* </a> */}
             </div>
           </Col>
         </Row>

@@ -7,7 +7,7 @@ import Members from '../../Members'
 import Banner from "../HomePage/Banner/Banner"
 import Mission from '../../Mission'
 // import About from '../About/About.jsx'
-import AutoScrollCarousel from '../Donate/AutoScrollCarousel'
+import Footer from '../../Footer/Footer'
 import Contact from "./Contact/Contact"
 
 const Home = () => {
@@ -20,6 +20,7 @@ const Home = () => {
         <Members/>
         <Banner/>
         <Contact />
+        <Footer/>
     </div>
   )
 }
