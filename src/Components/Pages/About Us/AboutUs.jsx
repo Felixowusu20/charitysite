@@ -4,8 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import aboutimg from "./../../../images/site logo/brand-logo1.png";
-import { Button } from "react-bootstrap";
-// import { FaChild } from "react-icons/fa";
+
 
 const AboutUs = () => {
   return (
@@ -30,9 +29,7 @@ const AboutUs = () => {
                 screening, mentorship program to school children, donations, and
                 general counseling.
               </p>
-              <Button variant="primary " className="mt-2 btn">
-                Read More
-              </Button>
+            
             </div>
           </div>
         </Col>

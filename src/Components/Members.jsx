@@ -1,5 +1,4 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState, useRef } from "react";
 import president from "../images/executives/president.jpg";
 import vice from "../images/executives/vice.jpg";
 import organiser from "../images/executives/organiser.jpg";
@@ -55,44 +54,115 @@ const Members = () => {
     },
   ];
 
-  const animationVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
+  // Duplicate the teamMembers array to create a seamless loop
+  const duplicatedTeamMembers = [...teamMembers, ...teamMembers, ...teamMembers];
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const gridContainerRef = useRef(null);
+  const membersSectionRef = useRef(null);
+  const [isComponentVisible, setIsComponentVisible] = useState(false);
+
+  // Detect when the Members component is in view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsComponentVisible(true); // Component is in view
+          } else {
+            setIsComponentVisible(false); // Component is not in view
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the component is visible
+      }
+    );
+
+    if (membersSectionRef.current) {
+      observer.observe(membersSectionRef.current);
+    }
+
+    return () => {
+      if (membersSectionRef.current) {
+        observer.unobserve(membersSectionRef.current);
+      }
+    };
+  }, []);
+
+  // Handle automatic scrolling and overlay display
+  useEffect(() => {
+    if (!isComponentVisible) return; // Only scroll if the component is in view
+
+    const gridContainer = gridContainerRef.current;
+    let scrollInterval;
+
+    const startScrolling = () => {
+      scrollInterval = setInterval(() => {
+        if (gridContainer) {
+          // Scroll to the next item
+          const nextIndex = (activeIndex + 1) % teamMembers.length;
+          const nextItem = gridContainer.querySelector(
+            `.grid-item:nth-child(${nextIndex + 1})`
+          );
+
+          if (nextItem) {
+            nextItem.scrollIntoView({
+              behavior: "smooth",
+              block: "nearest",
+              inline: "start",
+            });
+          }
+
+          // Update the active index
+          setActiveIndex(nextIndex);
+        }
+      }, 4000); // Change overlay and scroll every 4 seconds
+    };
+
+    startScrolling();
+
+    return () => clearInterval(scrollInterval);
+  }, [activeIndex, teamMembers.length, isComponentVisible]);
 
   return (
-    <section aria-labelledby="team-title">
+    <section
+      aria-labelledby="team-title"
+      className="backcolor"
+      ref={membersSectionRef}
+    >
       <div>
         <h1 id="team-title" style={{ textAlign: "center", margin: "1rem 0" }}>
           Meet Our Team
         </h1>
       </div>
-      <div className="grid-container">
-        {teamMembers.map((member, index) => (
-          <motion.div
-            key={index}
-            className="grid-item"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-            variants={animationVariants}
-            aria-label={`${member.position}: ${member.name}`}
-          >
-            <img
-              src={member.src}
-              alt={member.alt}
-              className="image"
-              onError={(e) =>
-                (e.target.src = "/images/default-placeholder.png")
-              }
-            />
-            <div className="overlay">
-              <h2 style={{color:'orange'}}>{member.position}</h2>
-              <p>{member.name}</p>
+      <div className="grid-container" ref={gridContainerRef}>
+        <div className="grid-scroll">
+          {duplicatedTeamMembers.map((member, index) => (
+            <div
+              key={index}
+              className="grid-item"
+              aria-label={`${member.position}: ${member.name}`}
+            >
+              <img
+                src={member.src}
+                alt={member.alt}
+                className="image"
+                onError={(e) =>
+                  (e.target.src = "/images/default-placeholder.png")
+                }
+              />
+              <div
+                className={`overlay ${
+                  activeIndex === index % teamMembers.length ? "active" : ""
+                }`}
+              >
+                <h2 style={{ color: 'orange' }}>{member.position}</h2>
+                <p>{member.name}</p>
+              </div>
             </div>
-          </motion.div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

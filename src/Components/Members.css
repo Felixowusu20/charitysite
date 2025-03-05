@@ -1,34 +1,34 @@
-
-
 .grid-container {
   display: flex;
   gap: 20px;
-  /* Spacing between cards */
   padding: 20px;
-  overflow-x: scroll;
-  /* Enable horizontal scrolling */
-  scrollbar-width: none;
-  /* Hide scrollbar for Firefox */
+  overflow-x: auto; /* Enable horizontal scrolling */
   max-width: 100%;
-  /* Ensure the container fits within the viewport */
   overflow-y: hidden;
+  position: relative;
+  scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 .grid-container::-webkit-scrollbar {
   display: none;
-  /* Hide scrollbar for Webkit browsers */
+  /* Hide scrollbar in Webkit browsers */
+}
+
+.backcolor {
+  background: #ce3c0f17;
+}
+
+.grid-scroll {
+  display: flex;
+  gap: 20px;
 }
 
 .grid-item {
   flex: 0 0 calc(25% - 20px);
-  /* Each item takes 25% of the visible container width minus gap */
   max-width: calc(25% - 20px);
-  /* Ensure the width is consistent */
   position: relative;
   border-radius: 10px;
-  /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Subtle shadow for better visuals */
   overflow: hidden;
 }
 
@@ -45,34 +45,34 @@
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.6);
-  /* Semi-transparent background */
   color: #fff;
   padding: 10px;
   opacity: 0;
-  /* Initially hidden */
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   transform: translateY(100%);
-  /* Slide-in effect from bottom */
   text-align: center;
 }
 
+/* Automatic display (controlled by JavaScript) */
+.overlay.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover effect */
 .grid-item:hover .overlay {
   opacity: 1;
-  /* Fully visible on hover */
   transform: translateY(0);
-  /* Reset to its position */
 }
 
 .grid-item:hover .image {
   transform: scale(1.1);
-  /* Slight zoom-in effect on hover */
 }
 
 /* Responsive adjustments */
 @media screen and (max-width: 767px) {
   .grid-item {
     flex: 0 0 calc(50% - 20px);
-  
     max-width: calc(50% - 20px);
   }
 
