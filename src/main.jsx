@@ -18,6 +18,8 @@ import App from "./App";
 import Home from "./Components/Pages/HomePage/Home";
 import Donate from "./Components/Pages/Donate/Donate"
 import About from "./Components/Pages/About/About";
+import ServicesPage from "./Components/Pages/ServicesPage/ServicesPage";
+import ContactPage from "./Components/Pages/HomePage/ContactPage/ContactPage";
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import {
@@ -42,7 +44,15 @@ const router = createBrowserRouter([
   {
     path: "Donate",
     element: <Donate/>,
-  }
+  },
+  {
+    path: "services",
+    element: <ServicesPage/>,
+  },
+  {
+    path: "contact",
+    element: <ContactPage/>,
+  },
 ]);
 
 const root = createRoot(document.getElementById('root'));
