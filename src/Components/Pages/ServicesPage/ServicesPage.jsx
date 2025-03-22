@@ -1,10 +1,20 @@
 import React from 'react'
-import './ServicesPage.css'
-
+import Services from '../Services/Services'
+import Header from '../Services/Components/Header'
+import Navtab from "../../NavBar/Navtab"
+import Intro from "../Donate/Intro"
 function ServicesPage() {
   return (
-    <div><h1>ServicesPage</h1></div>
-  )
+    <div>
+      <Navtab />
+      <Intro />
+      <div>
+        <Services />
+      </div>
+    
+      <Header />
+    </div>
+  );
 }
 
 export default ServicesPage
