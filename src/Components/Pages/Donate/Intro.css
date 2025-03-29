@@ -2,7 +2,7 @@
 .hero-container {
     position: relative;
     width: 100%;
-    height: 400px; /* Adjust height as needed */
+    height: 250px; /* Adjust height as needed */
     background-image: url("/src/images/donate.jpg"); /* Add your image path */
     background-size: cover;
     background-position: center;

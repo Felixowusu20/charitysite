@@ -1,29 +1,33 @@
-import React from 'react'
-import AutoScrollCarousel from './AutoScrollCarousel'
-import Navtab from '../../NavBar/Navtab'
-import "./Donate.css"
-import Intro from './Intro'
-import { Button } from 'react-bootstrap'
-import Footer from '../../Footer/Footer'
+import React from "react";
+import { Button } from "react-bootstrap"; // Third-party imports first
+import AutoScrollCarousel from "./AutoScrollCarousel";
+import Navtab from "../../NavBar/Navtab";
+import Footer from "../../Footer/Footer";
+import Intro from "./Intro"; // Component imports
+import "./Donate.css"; // Style imports
 
 const Donate = () => {
   return (
     <>
-    <Navtab/>
-    <Intro/>
-    <AutoScrollCarousel/>
-    {/* <button className='btn text-center'>
-      Donate now
-    </button> */}
-    <div className='d-flex justify-content-center align-items-center' style={{marginBottom:'40px', marginTop:'80px'}}>
-    <Button className='w-70'>
-      Donate now
-    </Button>
-    </div>
-    
-    <Footer/>  
+      <Navtab />
+
+      {/* Hero Section with Intro Component */}
+      <Intro 
+        heading="Donate for a worthy cause." 
+        typewriterTexts={["Help us make lives better."]}
+      />
+
+      {/* Auto Scrolling Carousel */}
+      <AutoScrollCarousel />
+
+      {/* Donate Button Section */}
+      <div className="d-flex justify-content-center align-items-center donate-btn-container">
+        <Button className="donate-btn">Donate now</Button>
+      </div>
+
+      <Footer />
     </>
-  )
-}
+  );
+};
 
 export default Donate;
