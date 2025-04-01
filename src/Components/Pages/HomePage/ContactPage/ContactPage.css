@@ -24,3 +24,68 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   }
   
+  /* New styles only for the contact info section */
+.contact-section-container {
+  padding: 60px 20px;
+}
+
+.contact-info-col {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.contact-info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ff7e5f;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.contact-info-item p {
+  margin: 0;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.contact-form-col {
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive adjustments only for this section */
+@media (min-width: 992px) {
+  .contact-info-col {
+    justify-content: flex-end;
+  }
+  
+  .contact-form-col {
+    justify-content: flex-start;
+  }
+
+  .contact-form-col{
+    width: 100%;
+  }
+}

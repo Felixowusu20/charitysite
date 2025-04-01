@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link, useLocation } from "react-router-dom";
 import "./Navtab.css";
 import logo from "../../images/site logo/brand-logo1.png";
 
@@ -11,6 +11,7 @@ const Navtab = () => {
     backgroundColor: "white",
     linkColor: "black",
   });
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,6 +31,15 @@ const Navtab = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // More accurate active path matching
+  const isActive = (path) => {
+    // Exact match for home page, startsWith for others
+    if (path === "/") {
+      return location.pathname === path;
+    }
+    return location.pathname.startsWith(path);
+  };
 
   return (
     <>
@@ -53,11 +63,12 @@ const Navtab = () => {
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto nav-link">
+            <Nav activeKey={location.pathname} className="ms-auto nav-link">
               <Nav.Link
                 as={Link}
                 to="/"
-                className="mx-2 fw-semibold nav-hover"
+                eventKey="/"
+                className={`mx-2 fw-semibold nav-hover ${isActive("/") || isActive("/home")  ? "active-nav" : ""}`}
                 style={{ color: navbarStyle.linkColor }}
               >
                 Home
@@ -65,7 +76,8 @@ const Navtab = () => {
               <Nav.Link
                 as={Link}
                 to="/About"
-                className="mx-2 fw-semibold nav-hover"
+                eventKey="/About"
+                className={`mx-2 fw-semibold nav-hover ${isActive("/about") ? "active-nav" : ""}`}
                 style={{ color: navbarStyle.linkColor }}
               >
                 About Us
@@ -73,16 +85,17 @@ const Navtab = () => {
               <Nav.Link
                 as={Link}
                 to="/services"
-                className="mx-2 fw-semibold nav-hover"
+                eventKey="/services"
+                className={`mx-2 fw-semibold nav-hover ${isActive("/services") ? "active-nav" : ""}`}
                 style={{ color: navbarStyle.linkColor }}
               >
                 Services
               </Nav.Link>
-              
               <Nav.Link
                 as={Link}
                 to="/contact"
-                className="mx-2 fw-semibold nav-hover"
+                eventKey="/contact"
+                className={`mx-2 fw-semibold nav-hover ${isActive("/contact") ? "active-nav" : ""}`}
                 style={{ color: navbarStyle.linkColor }}
               >
                 Contact
@@ -90,7 +103,8 @@ const Navtab = () => {
               <Nav.Link
                 as={Link}
                 to="/Donate"
-                className="mx-2 fw-semibold btn btn-primary textColor px-3 rounded-pill"
+                eventKey="/Donate"
+                className={`mx-2 fw-semibold btn btn-primary textColor px-3 rounded-pill ${isActive("/Donate") ? "active-donate" : ""}`}
                 style={{ cursor: "pointer", color: navbarStyle.linkColor }}
               >
                 Make a Donation

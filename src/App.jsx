@@ -9,10 +9,10 @@ function App() {
 
   return (
     <>
-      <Navtab />
+      {/* <Navtab /> */}
       <div className='mt-50 '>
         <Home />
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

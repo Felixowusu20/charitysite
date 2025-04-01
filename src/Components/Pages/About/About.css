@@ -49,22 +49,29 @@
     margin: 0 auto; /* Center the text */
   }
   
-  .about-who-we-are {
+  .about-who-we-are,.about-history {
     padding: 10%;
     font-size: larger;
     margin-bottom: 30px;
+    background: rgba(59, 57, 57, 0.068);
   }
   
-  .about-who-we-are h1 {
+  .about-who-we-are h1,.about-history-heading {
     font-size: 3rem;
     text-align: center;
     margin-bottom: 5%;
   }
+
   
-  .about-history {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    padding: 2% 10% 10% 10%;
-    font-size: larger;
+  @media screen and (max-width: 768px) {
+    .about-who-we-are h1, .about-history-heading{
+      font-size: large;
+    }
+
+    .about-hero-content .about-top-text {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    
   }

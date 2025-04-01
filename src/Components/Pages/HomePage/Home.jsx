@@ -7,12 +7,14 @@ import Members from '../../Members'
 import Banner from "../HomePage/Banner/Banner"
 import Mission from '../../Mission'
 // import About from '../About/About.jsx'
-// import Footer from '../../Footer/Footer'
+import Navtab from '../../NavBar/Navtab'
+import Footer from '../../Footer/Footer'
 import Contact from "./Contact/Contact"
 
 const Home = () => {
   return (
     <div >
+        <Navtab/>
         <Slider/>
         <Mission/>
         <AboutUs />
@@ -20,7 +22,7 @@ const Home = () => {
         <Members/>
         <Banner/>
         <Contact />
-        {/* <Footer/> */}
+        <Footer/>
     </div>
   )
 }

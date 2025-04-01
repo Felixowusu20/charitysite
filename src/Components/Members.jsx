@@ -21,51 +21,63 @@ const Members = () => {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const gridContainerRef = useRef(null);
-  const membersSectionRef = useRef(null);
-  const [isComponentVisible, setIsComponentVisible] = useState(false);
+  const itemRefs = useRef([]);
+  const intervalRef = useRef(null);
 
+  // Auto-scroll effect
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => setIsComponentVisible(entry.isIntersecting),
-      { threshold: 0.5 }
-    );
-
-    if (membersSectionRef.current) {
-      observer.observe(membersSectionRef.current);
-    }
-
-    return () => {
-      if (membersSectionRef.current) {
-        observer.unobserve(membersSectionRef.current);
-      }
+    const startAutoScroll = () => {
+      intervalRef.current = setInterval(() => {
+        setActiveIndex(prev => (prev + 1) % teamMembers.length);
+      }, 4000);
     };
-  }, []);
 
+    startAutoScroll();
+    return () => clearInterval(intervalRef.current);
+  }, [teamMembers.length]);
+
+  // Handle scroll to active item with mobile optimization
   useEffect(() => {
-    if (!isComponentVisible) return;
-
-    const scrollInterval = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % teamMembers.length);
-    }, 4000);
-
-    return () => clearInterval(scrollInterval);
-  }, [isComponentVisible, teamMembers.length]);
+    if (gridContainerRef.current && itemRefs.current[activeIndex]) {
+      const container = gridContainerRef.current;
+      const item = itemRefs.current[activeIndex];
+      const containerWidth = container.offsetWidth;
+      const itemWidth = item.offsetWidth;
+      const itemLeft = item.offsetLeft;
+      
+      // Calculate scroll position to center the item
+      let scrollTo = itemLeft - (containerWidth / 2) + (itemWidth / 2);
+      
+      // Ensure we don't scroll past the beginning or end
+      scrollTo = Math.max(0, Math.min(scrollTo, container.scrollWidth - containerWidth));
+      
+      container.scrollTo({
+        left: scrollTo,
+        behavior: 'smooth'
+      });
+    }
+  }, [activeIndex]);
 
   return (
-    <section aria-labelledby="team-title" className="backcolor" ref={membersSectionRef}>
-      <h1 id="team-title" style={{ textAlign: "center", margin: "1rem 0" }}>Meet Our Team</h1>
+    <section aria-labelledby="team-title" className="members-section">
+      <h1 id="team-title" className="title">Meet Our Team</h1>
       <div className="grid-container" ref={gridContainerRef}>
         <div className="grid-scroll">
           {teamMembers.map((member, index) => (
-            <div key={index} className="grid-item" aria-label={`${member.position}: ${member.name}`}>  
+            <div 
+              key={index}
+              ref={el => itemRefs.current[index] = el}
+              className={`grid-item ${index === activeIndex ? 'active' : ''}`}
+              aria-label={`${member.position}: ${member.name}`}
+            >  
               <img
                 src={member.src}
                 alt={member.alt}
                 className="image"
                 onError={(e) => (e.target.src = "/images/default-placeholder.png")}
               />
-              <div className={`overlay ${activeIndex === index ? "active" : ""}`}>
-                <h2 style={{ color: 'orange' }}>{member.position}</h2>
+              <div className={`overlay ${index === activeIndex ? 'active' : ''}`}>
+                <h2>{member.position}</h2>
                 <p>{member.name}</p>
               </div>
             </div>

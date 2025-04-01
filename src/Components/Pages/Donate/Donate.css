@@ -1,0 +1,12 @@
+@media screen and (max-width: 768px) {
+
+.scroll-content{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+button{
+    margin: 20px
+}
+
+}

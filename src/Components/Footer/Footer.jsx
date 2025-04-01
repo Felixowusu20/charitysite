@@ -4,7 +4,7 @@ import {
   FaFacebookF,
   FaTiktok,
   FaInstagram,
-  FaLinkedin,
+  // FaLinkedin,
 } from "react-icons/fa";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -48,9 +48,11 @@ const Footer = () => {
           <Col md={4} className="footer-contact">
             <h4 className="footer-heading">Contact Us</h4>
             <p>Email: adeipurityfoundation@gmail.com</p>
-            <p>Phone: +233 123 456 789</p>
+            <p>Phone:</p>
+            <p>+233 55 344 5748</p>
+            <p>+233 24 141 8662</p>
             <div className="footer-socials">
-              <a href="https://facebook.com" target="_blank" rel="noreferrer">
+              <a href="https://www.facebook.com/profile.php?id=61574727995144" target="_blank" rel="noreferrer">
                 <FaFacebookF />
               </a>
               <a href="https://www.tiktok.com/@adeipurityfoundation" target="_blank" rel="noreferrer">

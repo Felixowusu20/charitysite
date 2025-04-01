@@ -8,6 +8,7 @@ import medicalimg from "../../../../../src/images/icons/medicals.jpeg";
 import moneyicon from "../../../../../src/images/icons/fundraising.png";
 import schoolicon from "../../../../../src/images/icons/school.png";
 import medicalicon from "../../../../../src/images/icons/medical.png";
+import { Link } from "react-router-dom";
 
 import "./Offers.css"; // Import custom CSS
 
@@ -20,7 +21,7 @@ function Ouroffers() {
         "Raise funds quickly for your business or personal projects with ease on our trusted platform.",
       icon: moneyicon,
       image: moneyimg,
-      link: "#",
+      link: <Link to='/contact'></Link>,
     },
     {
       id: 2,
@@ -29,7 +30,8 @@ function Ouroffers() {
         "Access funding and educational resources to support your academic goals and projects.",
       icon: schoolicon,
       image: schoolimg,
-      link: "/home/fowusu/Documents/Main/charitysite/src/images/icons/schoolimg.avif",
+      link: <Link to='/contact'></Link>,
+
     },
     {
       id: 3,
@@ -38,7 +40,8 @@ function Ouroffers() {
         "Secure financial support for urgent medical treatments and healthcare needs.",
       icon: medicalicon,
       image: medicalimg,
-      link: "https://www.google.com",
+      link: <Link to='/contact'></Link>,
+
     },
   ];
 
@@ -59,13 +62,16 @@ function Ouroffers() {
             <Card.Text className="offer-description">
               {service.description}
             </Card.Text>
+
+            <Link to='/contact'>
             <Button
-              variant="primary"
-              href={service.link}
               className="offer-button"
             >
-              Learn More
+              Donate
             </Button>
+            </Link>
+            
+            
           </Card.Body>
         </Card>
       ))}

@@ -5,6 +5,7 @@ import Navtab from "../../NavBar/Navtab";
 import Footer from "../../Footer/Footer";
 import Intro from "./Intro"; // Component imports
 import "./Donate.css"; // Style imports
+import { Link } from "react-router-dom";
 
 const Donate = () => {
   return (
@@ -18,11 +19,17 @@ const Donate = () => {
       />
 
       {/* Auto Scrolling Carousel */}
+      <div  className="scroll-content" style={{marginBottom:'50px'}}>
+
       <AutoScrollCarousel />
+      </div>
 
       {/* Donate Button Section */}
-      <div className="d-flex justify-content-center align-items-center donate-btn-container">
+      <div className="d-flex justify-content-center align-items-center donate-btn-container" style={{marginBottom:'50px'}}>
+        <Link to='/contact'>
         <Button className="donate-btn">Donate now</Button>
+        
+        </Link>
       </div>
 
       <Footer />
